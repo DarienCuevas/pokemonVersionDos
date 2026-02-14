@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>prueba fetch pokemon</h1>
+    <input class="input">
+    <button class="boton">buscar</button>
+    <button class="reinicio">reiniciar</button>
+
+    <div class="nombre"></div>
+</body>
+<script>
+    const input = document.querySelector(".input")
+    const boton = document.querySelector(".boton")
+    const reinicio = document.querySelector(".reinicio")
+
+    async function buscarPokemon (nombre) {
+        reseteoPanel()
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`)
+            const data = await response.json()
+            console.log("datos generales", data)
+            
+            mostrarNombre(data)
+        } catch(error) {
+            console.log("error al hacer consulta", error)
+        }
+    }
+
+    boton.addEventListener("click",() => {
+        const searchPokemon = input.value.toLowerCase();
+        buscarPokemon(searchPokemon)
+    })
+
+    function mostrarNombre (data) {
+        const contenedorPrincipal = document.querySelector(".nombre")
+        const nombreP = document.createElement("h3")
+        contenedorPrincipal.appendChild(nombreP)
+
+        nombreP.textContent = data.name
+    }
+
+    function reseteoPanel () {
+        document.querySelector(".nombre").innerHTML = ""
+    }
+
+    reinicio.addEventListener("click", () => {
+        reseteoPanel()
+    })
+</script>
+</html>
