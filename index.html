@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pokémon API</h1>
+    <p>consultas básicas de la pokéAPI</p>
+
+    <input class="input" type="text" placeholder="Ingresa nombre de pokémon" />
+    <button class="boton" type="submit">Buscar</button>
+    <button class="reiniciar">Reiniciar</button>
+
+    <div class="mensaje"></div>
+
+    <div class="todoElContenido">
+      <button
+        class="tabs"
+        onclick="mostrarInterfaz(`showNumeroPokedexPokemon`)"
+      >
+        Pokédex
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showNombrePokemon`)">
+        Nombre
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showLocalizacionPokemon`)">
+        Localización
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showHabilidadesPokemon`)">
+        Habilidades
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showTiposPokemon`)">
+        Tipos
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showImagenesPokemon`)">
+        Imágenes
+      </button>
+      <button class="tabs" onclick="mostrarInterfaz(`showEstadisticasPokemon`)">
+        Estadísticas
+      </button>
+
+      <div id="showNumeroPokedexPokemon" class="seccion">
+        <div class="id"></div>
+      </div>
+
+      <div id="showNombrePokemon" class="seccion">
+        <div class="nombre"></div>
+      </div>
+
+      <div id="showLocalizacionPokemon" class="seccion">
+        <div class="localidad"></div>
+      </div>
+
+      <div id="showHabilidadesPokemon" class="seccion">
+        <div class="habilidades"></div>
+      </div>
+
+      <div id="showTiposPokemon" class="seccion">
+        <div class="tipos"></div>
+      </div>
+
+      <div id="showImagenesPokemon" class="seccion">
+        <div class="imagenes"></div>
+      </div>
+
+      <div id="showEstadisticasPokemon" class="seccion">
+        <div class="estadisticas"></div>
+      </div>
+    </div>
+
+    <script src="script.js" refer></script>
+  </body>
+</html>
